@@ -6,17 +6,16 @@ import org.json.JSONObject;
 
 public class Main {
   public static void main(String[] args) {
+    // Create a new schema in a JSON object.
     JSONObject schemaJson = new JSONObject();
     schemaJson.put("$schema", "http://json-schema.org/draft-07/schema#");
     schemaJson.put("type", "integer");
 
-    SchemaStore schemaStore = new SchemaStore();
     try {
-      Schema schema = schemaStore.loadSchema(schemaJson);
+      SchemaStore schemaStore = new SchemaStore();  // Initialize a SchemaStore.
+      Schema schema = schemaStore.loadSchema(schemaJson); // Load the schema.
       Validator.validate(schema, 1);  // Will not throw an exception.
       Validator.validate(schema, "X");  // Will throw a ValidationException.
-
-
     } catch (SchemaException e) {
       // ...
     }
