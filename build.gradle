@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url 'https://jitpack.io'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.github.jimblackler.jsonschematypes:jsonschemafriend:0.7'
+    implementation 'org.json:json:20200518'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
