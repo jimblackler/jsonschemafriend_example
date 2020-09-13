@@ -14,10 +14,10 @@ public class Main {
     schemaJson.put("type", "integer");
 
     try {
-      SchemaStore schemaStore = new SchemaStore();  // Initialize a SchemaStore.
+      SchemaStore schemaStore = new SchemaStore(); // Initialize a SchemaStore.
       Schema schema = schemaStore.loadSchema(schemaJson); // Load the schema.
-      Validator.validate(schema, 1);  // Will not throw an exception.
-      Validator.validate(schema, "X");  // Will throw a ValidationException.
+      Validator.validate(schema, 1); // Will not throw an exception.
+      Validator.validate(schema, "X"); // Will throw a ValidationException.
     } catch (SchemaException e) {
       // ...
     }
