@@ -1,5 +1,6 @@
-package demo2;
+package demo4;
 
+import java.io.File;
 import java.io.IOException;
 import net.jimblackler.jsonschemafriend.Schema;
 import net.jimblackler.jsonschemafriend.SchemaException;
@@ -11,14 +12,14 @@ public class Main {
     try {
       SchemaStore schemaStore = new SchemaStore(); // Initialize a SchemaStore.
       // Load the schema.
-      Schema schema = schemaStore.loadSchema(Main.class.getResource("/schema.json"));
+      Schema schema =
+          schemaStore.loadSchema(new File(Main.class.getResource("/schema.json").getFile()));
 
-      // Will not throw an exception.
-      Validator.validate(schema, Main.class.getResourceAsStream("/data1.json"));
+      Validator.validate(schema, new File("/tmp/test.json"));
 
       // Will throw a ValidationException.
-      Validator.validate(schema, Main.class.getResourceAsStream("/data2.json"));
-    } catch (SchemaException | IOException e) {
+      Validator.validate(schema, new File(Main.class.getResource("/data2.json").getFile()));
+    } catch (IOException | SchemaException e) {
       e.printStackTrace();
     }
   }
