@@ -15,10 +15,11 @@ public class Main {
       Schema schema =
           schemaStore.loadSchema(new File(Main.class.getResource("/schema.json").getFile()));
 
-      Validator.validate(schema, new File("/tmp/test.json"));
+      Validator validator = new Validator();
+      validator.validate(schema, new File("/tmp/test.json"));
 
       // Will throw a ValidationException.
-      Validator.validate(schema, new File(Main.class.getResource("/data2.json").getFile()));
+      validator.validate(schema, new File(Main.class.getResource("/data2.json").getFile()));
     } catch (IOException | SchemaException e) {
       e.printStackTrace();
     }

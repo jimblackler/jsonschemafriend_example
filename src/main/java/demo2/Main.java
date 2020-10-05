@@ -13,11 +13,13 @@ public class Main {
       // Load the schema.
       Schema schema = schemaStore.loadSchema(Main.class.getResource("/schema.json"));
 
+      Validator validator = new Validator();
+
       // Will not throw an exception.
-      Validator.validate(schema, Main.class.getResourceAsStream("/data1.json"));
+      validator.validate(schema, Main.class.getResourceAsStream("/data1.json"));
 
       // Will throw a ValidationException.
-      Validator.validate(schema, Main.class.getResourceAsStream("/data2.json"));
+      validator.validate(schema, Main.class.getResourceAsStream("/data2.json"));
     } catch (SchemaException | IOException e) {
       e.printStackTrace();
     }

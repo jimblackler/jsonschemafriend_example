@@ -18,7 +18,7 @@ public class Main {
 
       // Send an object that won't validate, and collect the validation errors.
       JSONObject document = new JSONObject();
-      Validator.validate(schema, document, validationError -> {
+      new Validator().validate(schema, document, validationError -> {
         if (validationError instanceof MissingPropertyError) {
           MissingPropertyError missingPropertyError = (MissingPropertyError) validationError;
           System.out.println("A missing property was: " + missingPropertyError.getProperty());

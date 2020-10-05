@@ -17,7 +17,7 @@ public class Main {
       URI resume = URI.create(
           "https://gist.githubusercontent.com/thomasdavis/c9dcfa1b37dec07fb2ee7f36d7278105/raw");
       // Will not throw an exception; document passes the schema.
-      Validator.validate(schema, resume);
+      new Validator().validate(schema, resume);
 
     } catch (SchemaException | IOException e) {
       e.printStackTrace();

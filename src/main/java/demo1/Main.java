@@ -16,8 +16,9 @@ public class Main {
     try {
       SchemaStore schemaStore = new SchemaStore(); // Initialize a SchemaStore.
       Schema schema = schemaStore.loadSchema(schemaJson); // Load the schema.
-      Validator.validate(schema, 1); // Will not throw an exception.
-      Validator.validate(schema, "x"); // Will throw a ValidationException.
+      Validator validator = new Validator();  // Create a validator.
+      validator.validate(schema, 1); // Will not throw an exception.
+      validator.validate(schema, "x"); // Will throw a ValidationException.
     } catch (SchemaException e) {
       e.printStackTrace();
     }
