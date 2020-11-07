@@ -1,2 +1,2 @@
 Example project for
-[jsonschmeafriend](https://github.com/jimblackler/jsonschematypes/tree/master/library)
+[jsonschmeafriend](https://github.com/jimblackler/jsonschemafriend)
