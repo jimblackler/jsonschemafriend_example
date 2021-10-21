@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'net.jimblackler.jsonschemafriend:core:0.10.6'
-    implementation 'net.jimblackler.jsonschemafriend:extra:0.10.6'
+    implementation 'net.jimblackler.jsonschemafriend:core:0.11.2'
+    implementation 'net.jimblackler.jsonschemafriend:extra:0.11.2'
     implementation 'org.json:json:20210307'
 }
